@@ -147,18 +147,23 @@
       website: $("website").value
     });
     $("send").disabled = true; $("send").textContent = "كنصيفطو…";
-    var done = function () { success(items, t, phone); };
-    if (!S.SHEET_URL || S.SHEET_URL.indexOf("http") !== 0) { done(); return; }
+    var noSheet = !S.SHEET_URL || S.SHEET_URL.indexOf("http") !== 0;
+    var done = function () { success(items, t, phone, noSheet); };
+    if (noSheet) { done(); return; }
     fetch(S.SHEET_URL, { method: "POST", mode: "no-cors", body: data }).then(done, done);
     try { if (window.fbq) fbq("track", "Purchase", { value: t.sum, currency: "MAD" }); } catch (x) {}
   }
 
-  function success(items, t, phone) {
+  function success(items, t, phone, noSheet) {
     var msg = "السلام، درت طلب من المتجر ديال سيليا أوازيس:\n" + items.join("\n") +
       (t.sum ? "\nالمجموع: " + t.sum + " درهم" : "") + "\nالسمية: " + form.name.trim() + "\nالتيليفون: " + phone + "\nالمدينة: " + form.city.trim();
-    $("panel").innerHTML = '<div class="ok"><div class="big">✅</div><h3>توصلنا بالطلب ديالك!</h3>' +
+    var wa = '<a target="_blank" rel="noopener" href="' + waBase + encodeURIComponent(msg) + '">';
+    $("panel").innerHTML = noSheet
+      ? '<div class="ok"><div class="big">📲</div><h3>باقي خطوة وحدة</h3><p>كليكي على الزر الأخضر باش يوصلنا الطلب فالواتساب، ونعيطو ليك نأكدو.</p>' + wa + '💬 صيفط الطلب فالواتساب</a>' +
+        '<button class="send" id="again" style="background:#151515">رجع للمتجر</button></div>'
+      : '<div class="ok"><div class="big">✅</div><h3>توصلنا بالطلب ديالك!</h3>' +
       "<p>شكرا " + esc(form.name.trim()) + ". غادي نعيطو ليك فـ <b>" + esc(phone) + "</b> باش نأكدو الطلب وثمن التوصيل.</p>" +
-      '<a target="_blank" rel="noopener" href="' + waBase + encodeURIComponent(msg) + '">💬 بغيتي تزرب؟ صيفط الطلب فالواتساب</a>' +
+      wa + '💬 بغيتي تزرب؟ صيفط الطلب فالواتساب</a>' +
       '<button class="send" id="again" style="background:#151515">رجع للمتجر</button></div>';
     cart = {}; save(); render();
     $("again").onclick = closeCart;
