@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>متجر سيليا أوازيس — ماتيريال الدجاج والأعلاف</title>
+<meta name="description" content="فقاسات، شرابات، وكالات، التسخين والأعلاف. اطلب بسهولة ونعيطو ليك نأكدو الطلب.">
+<meta property="og:title" content="متجر سيليا أوازيس">
+<meta property="og:description" content="ماتيريال تربية الدجاج والأعلاف — اطلب بسهولة">
+<meta property="og:image" content="img/og.jpg">
+<meta name="theme-color" content="#151515">
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#151515;--gold:#D9A73A;--gold2:#F2D27A;--cream:#FAF7F2;--line:#ECE5D8;--green:#1E8E4E;--muted:#6B6458}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:Cairo,system-ui,sans-serif;background:var(--cream);color:var(--ink);font-size:17px;line-height:1.6;padding-bottom:90px}
+button{font-family:inherit;cursor:pointer;border:0}
+.wrap{max-width:720px;margin:0 auto;padding:0 14px}
+header{background:var(--ink);color:#fff;padding:14px 0 18px;text-align:center}
+header img{height:64px}
+header h1{font-size:22px;font-weight:900;margin-top:4px;color:var(--gold2)}
+header p{font-size:15px;color:#E9E3D6}
+.trust{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+.trust span{background:#262626;border:1px solid #3a3a3a;border-radius:30px;padding:3px 12px;font-size:14px}
+.how{background:#fff;border:1px solid var(--line);border-radius:16px;margin:14px 0;padding:12px 14px;display:flex;gap:10px;justify-content:space-between;text-align:center;font-size:14px;font-weight:700}
+.how div{flex:1}.how b{display:block;font-size:24px}
+.cats{position:sticky;top:0;z-index:5;background:var(--cream);padding:10px 0;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+.cats::-webkit-scrollbar{display:none}
+.cats button{flex:0 0 auto;background:#fff;border:2px solid var(--line);border-radius:30px;padding:6px 14px;font-size:16px;font-weight:800;color:var(--ink)}
+.cats button.on{background:var(--ink);color:var(--gold2);border-color:var(--ink)}
+.search{width:100%;border:2px solid var(--line);border-radius:14px;padding:10px 14px;font:inherit;background:#fff;margin-bottom:6px}
+h2{font-size:21px;font-weight:900;margin:18px 0 10px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(min-width:620px){.grid{grid-template-columns:repeat(3,1fr)}}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.card .ph{aspect-ratio:1;background:#fff;display:flex;align-items:center;justify-content:center;position:relative}
+.card .ph img{width:100%;height:100%;object-fit:contain}
+.card .ph .noimg{font-size:48px}
+.card .top{position:absolute;top:8px;right:8px;background:var(--gold);color:var(--ink);font-size:12px;font-weight:900;border-radius:20px;padding:1px 10px}
+.card .in{padding:8px 10px 10px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card .nm{font-weight:800;font-size:16px;line-height:1.35;min-height:43px}
+.card .pr{font-weight:900;font-size:20px;color:var(--green)}
+.card .pr small{font-size:14px}
+.card .ask{font-size:14px;color:var(--muted);font-weight:700}
+.add{background:var(--ink);color:#fff;border-radius:12px;padding:9px 6px;font-size:16px;font-weight:800;margin-top:auto}
+.qty{display:flex;align-items:center;justify-content:space-between;background:#F3EEE4;border-radius:12px;margin-top:auto}
+.qty button{width:42px;height:42px;font-size:24px;font-weight:900;background:transparent;color:var(--ink)}
+.qty span{font-weight:900;font-size:18px}
+.bar{position:fixed;bottom:0;left:0;right:0;z-index:20;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(250,247,242,.96);border-top:1px solid var(--line);display:none}
+.bar.show{display:block}
+.bar button{width:100%;max-width:692px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;background:var(--green);color:#fff;border-radius:16px;padding:12px 18px;font-size:18px;font-weight:900}
+.wa{position:fixed;left:14px;bottom:86px;z-index:19;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(0,0,0,.25)}
+.wa svg{width:32px;height:32px;fill:#fff}
+.sheet{position:fixed;inset:0;z-index:30;background:rgba(0,0,0,.5);display:none;align-items:flex-end;justify-content:center}
+.sheet.show{display:flex}
+.panel{background:var(--cream);width:100%;max-width:720px;max-height:92vh;overflow:auto;border-radius:22px 22px 0 0;padding:16px 16px 24px}
+.panel h3{font-size:22px;font-weight:900;display:flex;justify-content:space-between;align-items:center}
+.x{background:#fff;border:1px solid var(--line);width:40px;height:40px;border-radius:50%;font-size:22px}
+.line{display:flex;gap:10px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:8px;margin-top:8px}
+.line img{width:56px;height:56px;object-fit:contain;border-radius:10px;background:#fff}
+.line .t{flex:1;font-weight:800;font-size:15px;line-height:1.35}
+.line .t small{display:block;color:var(--green);font-size:15px}
+.line .qty{margin:0;width:118px}
+.line .qty button{width:36px;height:36px}
+.total{display:flex;justify-content:space-between;font-weight:900;font-size:20px;margin:14px 2px 4px}
+.note{font-size:14px;color:var(--muted);margin:0 2px 10px}
+label{display:block;font-weight:800;margin:12px 0 4px}
+input,textarea,select{width:100%;border:2px solid var(--line);border-radius:14px;padding:12px 14px;font:inherit;font-size:18px;background:#fff}
+input:focus,textarea:focus{outline:none;border-color:var(--gold)}
+.err{color:#C0392B;font-weight:800;font-size:15px;margin-top:4px;display:none}
+.send{width:100%;background:var(--green);color:#fff;border-radius:16px;padding:14px;font-size:20px;font-weight:900;margin-top:16px}
+.send:disabled{opacity:.6}
+.ok{text-align:center;padding:10px 0}
+.ok .big{font-size:56px}
+.ok h3{justify-content:center}
+.ok p{margin:8px 0}
+.ok a{display:block;background:#25D366;color:#fff;text-decoration:none;font-weight:900;border-radius:16px;padding:13px;margin-top:14px;font-size:18px}
+footer{background:var(--ink);color:#E9E3D6;text-align:center;padding:22px 14px;margin-top:30px;font-size:15px}
+footer b{color:var(--gold2)}
+.hp{position:absolute;left:-9999px}
+.empty{text-align:center;color:var(--muted);padding:30px 0;display:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <img src="img/logo.png" alt="Celia Oasis">
+    <h1>متجر سيليا أوازيس</h1>
+    <p>كلشي اللي خاص الكوري ديالك: فقاسات، شرابات، وكالات، التسخين والأعلاف</p>
+    <div class="trust"><span>📍 تنغير</span><span>🚚 التوصيل لجميع المدن</span><span>📞 كنعيطو ليك نأكدو</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="how">
+    <div><b>①</b>ختار المنتوج</div>
+    <div><b>②</b>عمّر سميتك والتيليفون</div>
+    <div><b>③</b>نعيطو ليك ونصيفطوه</div>
+  </div>
+  <input class="search" id="q" type="search" placeholder="🔎 قلّب على منتوج… (مثلا: شرابة)">
+  <nav class="cats" id="cats"></nav>
+  <div id="list"></div>
+  <p class="empty" id="empty">ما لقينا والو. سولنا فالواتساب 👇</p>
+</main>
+
+<footer>
+  <b>Celia Oasis · سيليا أوازيس</b><br>
+  <span id="addr"></span> · <a id="tel" style="color:#F2D27A"></a><br>
+  الأثمنة كتتأكد معاك فالتيليفون قبل الإرسال
+</footer>
+
+<a class="wa" id="wa" target="_blank" rel="noopener" aria-label="واتساب"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg></a>
+
+<div class="bar" id="bar"><button id="openCart"><span>🛒 كمّل الطلب (<span id="cnt">0</span>)</span><span id="sum"></span></button></div>
+
+<div class="sheet" id="sheet">
+  <div class="panel" id="panel"></div>
+</div>
+
+<script src="config.js?v=1"></script>
+<script src="app.js?v=1"></script>
+</body>
+</html>
