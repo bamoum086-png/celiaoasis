@@ -1,7 +1,7 @@
 // إعدادات متجر سيليا أوازيس — كل تبديل هنا (الأثمنة، المنتوجات، الرابط ديال الشيت)
 window.STORE = {
   // رابط Apps Script ديال شيت الطلبات (Deploy ← Web app)
-  SHEET_URL: "__SHEET_URL__",
+  SHEET_URL: "https://script.google.com/macros/s/AKfycbxkWlgVl09OOcZIuSZZ_AqeTHl5oCWdATLlz1N9LJAxVgZPBHUgIUa7WWaTaoQpCT_6/exec",
   WHATSAPP: "212698723448",
   PHONE_DISPLAY: "0698723448",
   ADDRESS: "تنغير - شارع محمد الخامس",
