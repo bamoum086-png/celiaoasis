@@ -37,7 +37,7 @@
       '<img loading="lazy" src="' + img(p) + '" alt="' + esc(p.name) + '" onerror="this.outerHTML=\'<span class=noimg>📦</span>\'">' +
       (p.top ? '<span class="top">مطلوب</span>' : "") + "</div>" +
       '<div class="in"><div class="nm">' + esc(p.name) + "</div>" +
-      (p.price != null ? '<div class="pr">' + p.price + " <small>درهم</small></div>" : '<div class="ask">💬 الثمن كنعطيوه ليك فالتيليفون</div>') +
+      (p.price != null ? '<div class="pr">' + p.price + " <small>درهم" + (p.unit ? " / " + esc(p.unit) : "") + "</small></div>" + (p.note ? '<div class="note">' + esc(p.note) + "</div>" : "") : '<div class="ask">💬 الثمن كنعطيوه ليك فالتيليفون</div>') +
       (q ? '<div class="qty"><button data-a="inc" data-id="' + p.id + '">+</button><span>' + q + '</span><button data-a="dec" data-id="' + p.id + '">−</button></div>'
          : '<button class="add" data-a="inc" data-id="' + p.id + '">' + "زيد للطلب" + "</button>") +
       "</div></div>";
@@ -136,7 +136,7 @@
     var t = totals();
     var items = Object.keys(cart).map(function (id) {
       var p = byId[id];
-      return p.name + " × " + cart[id] + (p.price != null ? " = " + p.price * cart[id] + " د" : " (الثمن فالتيليفون)");
+      return p.name + " × " + cart[id] + (p.unit ? " " + p.unit.replace(/^ال/, "") : "") + (p.price != null ? " = " + p.price * cart[id] + " د" : " (الثمن فالتيليفون)");
     });
     var noprice = Object.keys(cart).filter(function (id) { return byId[id].price == null; }).map(function (id) { return byId[id].name + " × " + cart[id]; });
     var params = new URLSearchParams(location.search);

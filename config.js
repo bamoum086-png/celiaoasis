@@ -12,7 +12,7 @@ window.STORE = {
     { id: "feed", name: "الأعلاف", icon: "🌾" },
     { id: "tools", name: "ماتيريال الكوري", icon: "🧰" },
     { id: "birds", name: "الحمام والطيور", icon: "🕊️" },
-    { id: "cats", name: "القطط", icon: "🐱" }
+    { id: "cats", name: "القطط والكلاب", icon: "🐱" }
   ],
   // price: null = الثمن كيتعطى فالتيليفون / الواتساب
   PRODUCTS: [
@@ -49,13 +49,14 @@ window.STORE = {
     { id: "p19", cat: "heat", name: "رشاشات تركية", price: 35 },
     { id: "p36", cat: "heat", name: "فلطاج الحضانة", price: 13 },
 
-    { id: "p45", cat: "feed", name: "علف بيض الدجاج", price: null, top: true },
-    { id: "p46", cat: "feed", name: "الديماراج", price: null },
-    { id: "p47", cat: "feed", name: "الكروكيت", price: null },
-    { id: "p48", cat: "feed", name: "الرياشة", price: null },
+    { id: "p45", cat: "feed", name: "علف بيض الدجاج (البياضة)", price: 5.5, unit: "الكيلو", top: true },
+    { id: "p46", cat: "feed", name: "الديماراج", price: 6, unit: "الكيلو" },
+    { id: "p56", cat: "feed", name: "علف النمو 45", price: 5.5, unit: "الكيلو" },
+        { id: "p48", cat: "feed", name: "الرياشة", price: null },
     { id: "p40", cat: "feed", name: "الأزولا", price: null },
-    { id: "p54", cat: "feed", name: "شعير", price: null },
-    { id: "p55", cat: "feed", name: "نخالة", price: null },
+    { id: "p54", cat: "feed", name: "شعير", price: 4.5, unit: "الكيلو", note: "المود: 30 درهم" },
+    { id: "p55", cat: "feed", name: "نخالة", price: 5, unit: "الكيلو" },
+    { id: "p57", cat: "feed", name: "الذرة", price: 5, unit: "الكيلو", note: "المود: 35 درهم" },
 
     { id: "p02", cat: "tools", name: "ميزان 50 كيلو", price: 50 },
     { id: "p07", cat: "tools", name: "صندوق نقل الدجاج", price: 250 },
@@ -67,16 +68,18 @@ window.STORE = {
     { id: "p44", cat: "birds", name: "شرابة الحمام", price: null },
     { id: "p21", cat: "birds", name: "صفارة الحمام", price: 20 },
     { id: "p22", cat: "birds", name: "حلقات رجلين الحمام", price: 2 },
-    { id: "p51", cat: "birds", name: "ميلونج الحمام", price: null },
+    { id: "p51", cat: "birds", name: "ميلونج الحمام", price: 12, unit: "الكيلو" },
     { id: "p49", cat: "birds", name: "ميلونج الطيور (ليزانسيبارابل)", price: null },
-    { id: "p53", cat: "birds", name: "ماكلة الكالوبسيت", price: null },
-    { id: "p50", cat: "birds", name: "زوان باشنا", price: null },
-    { id: "p52", cat: "birds", name: "زوان الطويل", price: null },
+    { id: "p53", cat: "birds", name: "خليط الكالوبسيت", price: 18, unit: "الكيلو" },
+    { id: "p50", cat: "birds", name: "زوان باشنا", price: 12, unit: "الكيلو" },
+    { id: "p52", cat: "birds", name: "زوان الطويل", price: 18, unit: "الكيلو" },
 
     { id: "p10", cat: "cats", name: "بيت القطط", price: 110 },
     { id: "p09", cat: "cats", name: "قفص نقل القطط", price: 75 },
     { id: "p16", cat: "cats", name: "رضاعة صغار القطط", price: 40 },
     { id: "p35", cat: "cats", name: "قلادة القطط (طوق العنق)", price: 14 },
-    { id: "p43", cat: "cats", name: "ماكلة القطط المفضلة", price: null }
+    { id: "p43", cat: "cats", name: "ماكلة القطط المفضلة", price: null },
+    { id: "p47", cat: "cats", name: "كروكيت القطط", price: 20, unit: "الكيلو" },
+    { id: "p58", cat: "cats", name: "كروكيت الكلاب", price: 18, unit: "الكيلو" }
   ]
 };
